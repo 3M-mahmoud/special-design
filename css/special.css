@@ -929,3 +929,13 @@ footer {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+
+.scoller {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--main-color);
+  z-index: 1001;
+}

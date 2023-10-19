@@ -248,3 +248,11 @@ document.querySelector(".setting-box .reset-option").onclick = function () {
   window.localStorage.clear();
   window.location.reload();
 };
+
+
+let scoller = document.querySelector(".scoller");
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+window.addEventListener("scroll", () => {
+  let scrollTop = document.documentElement.scrollTop;
+  scoller.style.width = `${(scrollTop / height) * 100}%`;
+})
