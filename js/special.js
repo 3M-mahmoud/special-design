@@ -82,11 +82,11 @@ randomBackground.forEach((e) => {
 });
 
 let backgrounds = [
-  "../imgs/01.jpg",
-  "../imgs/02.jpg",
-  "../imgs/03.jpg",
-  "../imgs/04.jpg",
-  "../imgs/05.jpg",
+  "imgs/01.jpg",
+  "imgs/02.jpg",
+  "imgs/03.jpg",
+  "imgs/04.jpg",
+  "imgs/05.jpg",
 ];
 
 function randomizeImgs() {
@@ -201,7 +201,7 @@ document.querySelectorAll(".img-box img").forEach((img) => {
     popup.append(h3);
 
     let image = document.createElement("img");
-    image.src = e.target.src.slice(e.target.src.indexOf("/imgs"));
+    image.src = e.target.src.slice(e.target.src.indexOf("imgs"));
     popup.append(image);
 
     let span = document.createElement("span");
