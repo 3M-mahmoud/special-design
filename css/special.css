@@ -862,12 +862,19 @@ textarea:focus {
   border-color: transparent transparent var(--main-color) var(--main-color);
 }
 /* End Contact */
+/* Start Footer */
 footer {
   padding: 20px;
   text-align: center;
   background-color: #333;
   color: #EEE;
 }
+@media (max-width: 567px) {
+  footer {
+    font-size: 14px;
+  }
+}
+/* End Footer */
 
 .overly {
   position: fixed;
