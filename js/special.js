@@ -230,6 +230,13 @@ links.forEach((e) => {
   });
 });
 
+document.onkeyup = function(e) {
+  if (e.key === "Escape") {
+    icon.classList.remove("close");
+    ul.classList.remove("open");
+  }
+}
+
 function scrollAnyWhere(elements) {
   elements.forEach((el) => {
     el.addEventListener("click", (e) => {
