@@ -263,3 +263,60 @@ window.addEventListener("scroll", () => {
   let scrollTop = document.documentElement.scrollTop;
   scoller.style.width = `${(scrollTop / height) * 100}%`;
 })
+
+let landingPage = document.querySelector(".landing-page");
+let gallery = document.querySelector(".gallery");
+let timeline = document.querySelector(".timeline");
+let features = document.querySelector(".features");
+window.addEventListener("scroll", () => {
+  if (
+    window.scrollY >
+    landingPage.offsetTop + landingPage.offsetHeight - window.innerHeight
+  ) {
+    document.querySelector(".about").classList.add("animation-left");
+  } else {
+    document.querySelector(".about").classList.remove("animation-left");
+  }
+  if (
+    window.scrollY >
+    ourSkills.offsetTop + ourSkills.offsetHeight - window.innerHeight
+  ) {
+    document.querySelector(".gallery").classList.add("animation-opacity");
+  } else {
+    document.querySelector(".gallery").classList.remove("animation-opacity");
+  }
+  if (
+    window.scrollY >
+    gallery.offsetTop + gallery.offsetHeight - window.innerHeight
+    ) {
+      document.querySelectorAll(".timeline .timeline-content .right").forEach((e) => {
+        e.classList.add("animation-left");
+      });
+      document.querySelectorAll(".timeline .timeline-content .left").forEach((e) => {
+        e.classList.add("animation-right");
+      });
+    } else {
+      document.querySelectorAll(".timeline .timeline-content .right").forEach((e) => {
+        e.classList.remove("animation-left");
+      });
+      document.querySelectorAll(".timeline .timeline-content .left").forEach((e) => {
+        e.classList.remove("animation-right");
+      });
+    }
+    if (
+      window.scrollY >
+      timeline.offsetTop + timeline.offsetHeight - window.innerHeight
+    ) {
+      document.querySelector(".features").classList.add("animation-opacity");
+    } else {
+      document.querySelector(".features").classList.remove("animation-opacity");
+    }
+    if (
+      window.scrollY >
+      features.offsetTop + features.offsetHeight - window.innerHeight
+    ) {
+      document.querySelector(".testimonials").classList.add("animation-opacity");
+    } else {
+      document.querySelector(".testimonials").classList.remove("animation-opacity");
+    }
+});

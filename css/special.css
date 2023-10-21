@@ -509,6 +509,10 @@ body {
 .about .image img {
   width: 250px;
 }
+.animation-left img {
+  animation: slideLeft .5s linear forwards;
+  -webkit-animation: slideLeft .5s linear forwards;
+}
 /* End About Us */
 /* Start Skills */
 .skills {
@@ -567,6 +571,12 @@ body {
   border: 1px solid #ccc;
   background-color: #f6f6f6;
   cursor: pointer;
+  opacity: 0;
+}
+.animation-opacity img {
+  animation: opacity .5s linear forwards;
+  -webkit-animation: opacity .5s linear forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 /* End Gallery */
 /* Start Timeline */
@@ -611,15 +621,28 @@ body {
   margin-bottom: 40px;
   position: relative;
 }
+.timeline .timeline-content .left {
+  float: left;
+}
+.timeline .timeline-content .right {
+  float: right;
+}
+.timeline .timeline-content .animation-left {
+  animation: slideLeft 1s linear;
+  -webkit-animation: slideLeft 1s linear;
+  animation-delay: calc(.2s * var(--i));
+}
+.timeline .timeline-content .animation-right {
+  animation: slideRight 1s linear;
+  -webkit-animation: slideRight 1s linear;
+  animation-delay: calc(.2s * var(--i));
+}
 @media (max-width: 767px) {
   .timeline .timeline-content .left,
 .timeline .timeline-content .right {
   width: 100%;
   margin-bottom: 20px;
 }
-}
-.timeline .timeline-content .left {
-  float: left;
 }
 .timeline .timeline-content .left::before,
 .timeline .timeline-content .right::before {
@@ -642,9 +665,7 @@ body {
 .timeline .timeline-content .right::before {
   left: -35px;
 }
-.timeline .timeline-content .right {
-  float: right;
-}
+
 .clearfix {
   clear: both;
 }
@@ -700,6 +721,12 @@ body {
 .features .feat-box {
   text-align: center;
   margin-bottom: 40px;
+  opacity: 0;
+}
+.animation-opacity .feat-box {
+  animation: opacity 1s linear forwards;
+  -webkit-animation: opacity 1s linear forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 .features .feat-box img {
   width: 96px;
@@ -775,6 +802,12 @@ body {
 .testimonials .content .ts-box {
   background-color: #FFF;
   padding: 20px;
+  opacity: 0;
+}
+.animation-opacity .ts-box {
+  animation: opacity 1s linear forwards;
+  -webkit-animation: opacity 1s linear forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 .testimonials .content .ts-box p {
   margin: 0 0 20px;
@@ -969,16 +1002,16 @@ footer {
 /* Keyframe Animation */
 @keyframes slideRight {
   0% {
-    transform: translateX(-100px);
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-    -moz-transform: translateX(-100px);
-    -ms-transform: translateX(-100px);
-    -o-transform: translateX(-100px);
+    transform: translateX(-200px);
+    -webkit-transform: translateX(-200px);
+    -moz-transform: translateX(-200px);
+    -ms-transform: translateX(-200px);
+    -o-transform: translateX(-200px);
 }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -987,16 +1020,16 @@ footer {
 }
 @keyframes slideLeft {
   0% {
-    transform: translateX(100px);
     opacity: 0;
-    -webkit-transform: translateX(100px);
-    -moz-transform: translateX(100px);
-    -ms-transform: translateX(100px);
-    -o-transform: translateX(100px);
+    transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+    -moz-transform: translateX(200px);
+    -ms-transform: translateX(200px);
+    -o-transform: translateX(200px);
 }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -1064,4 +1097,12 @@ footer {
   100% {
     border-right-color: transparent;
   }
+}
+@keyframes opacity {
+  0% {
+     opacity: 0;
+} 
+  100% {
+    opacity: 1;
+}
 }
