@@ -215,11 +215,15 @@ body {
   margin: 20px auto;
   cursor: pointer;
   position: relative;
+  opacity: 0;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  animation: slideLeft .3s linear forwards;
+  -webkit-animation: slideLeft .3s linear forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 .nav-bullets .bullet .tooltip {
   background-color: var(--main-color);
@@ -279,6 +283,9 @@ body {
   width: 300px;
   padding: 15px;
   font-weight: bold;
+  opacity: 0;
+  animation: slideRight .5s linear forwards;
+  -webkit-animation: slideRight .5s linear forwards;
 }
 .links .icons {
   display: flex;
@@ -288,6 +295,9 @@ body {
   height: 23px;
   cursor: pointer;
   position: relative;
+  opacity: 0;
+  animation: slideBottom .5s linear forwards;
+  -webkit-animation: slideBottom .5s linear forwards;
 }
 .links .icons span {
     position: absolute;
@@ -339,6 +349,14 @@ body {
 .links ul {
   display: flex;
   align-items: center;
+}
+@media (min-width: 992px) {
+  .links ul li {
+    opacity: 0;
+    animation: slideTop .3s linear forwards;
+    -webkit-animation: slideTop .3s linear forwards;
+    animation-delay: calc(.2s * var(--i));
+  }
 }
 .links ul li a {
   position: relative;
@@ -425,11 +443,19 @@ body {
 }
 .intro-text h1 {
   font-size: 34px;
-  margin: 0 0 12px;
+  margin: 0 auto 12px;
+  display: block;
+  width: 410px;
+  overflow: hidden;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  animation: control-width 4s steps(22) 0.5s both, blink .3s infinite;
+  -webkit-animation: control-width 4s steps(22) 0.5s both, blink .3s infinite;
 }
 @media (max-width: 575px) {
     .intro-text h1 {
         font-size: 26px;
+        width: 200px;
     }
 }
 .intro-text h1 span {
@@ -938,4 +964,104 @@ footer {
   height: 3px;
   background-color: var(--main-color);
   z-index: 1001;
+}
+
+/* Keyframe Animation */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+}
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+}
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    -o-transform: translateY(100px);
+}
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+    -webkit-transform: translateY(-100px);
+    -moz-transform: translateY(-100px);
+    -ms-transform: translateY(-100px);
+    -o-transform: translateY(-100px);
+}
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+}
+@keyframes control-width {
+  0% {
+    width: 0;
+  } 
+  100% {
+    width: 410px;
+  }
+}
+@media (max-width: 567px) {
+  @keyframes control-width {
+    0% {
+      width: 0;
+    } 
+    100% {
+      width: 320px;
+    }
+  }
+}
+@keyframes blink {
+  0% {
+    border-right-color: white;
+  } 
+  100% {
+    border-right-color: transparent;
+  }
 }
