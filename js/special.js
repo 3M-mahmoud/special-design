@@ -274,8 +274,10 @@ window.addEventListener("scroll", () => {
     landingPage.offsetTop + landingPage.offsetHeight - window.innerHeight
   ) {
     document.querySelector(".about").classList.add("animation-left");
+    document.querySelector(".about").classList.add("animation-right");
   } else {
     document.querySelector(".about").classList.remove("animation-left");
+    document.querySelector(".about").classList.remove("animation-right");
   }
   if (
     window.scrollY >
@@ -319,4 +321,15 @@ window.addEventListener("scroll", () => {
     } else {
       document.querySelector(".testimonials").classList.remove("animation-opacity");
     }
+});
+
+// landing-loader
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".landing-loader");
+  document.body.style.overflow = "hidden";
+
+  setTimeout(() => {
+    loader.remove();
+    document.body.style.overflow = "auto";
+  }, 800)
 });
