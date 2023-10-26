@@ -552,7 +552,6 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  /* width: 0; */
   height: 100%;
   background-color: var(--main-color);
   transition: .7s;
@@ -1002,7 +1001,7 @@ footer {
   background-color: var(--main-color);
   z-index: 1001;
 }
-/* landing-loader */
+/* Start landing-loader */
 .landing-loader {
   position: fixed;
   left: 0;
@@ -1075,6 +1074,56 @@ footer {
   transform: rotate(-55deg);
   filter: blur(30px) drop-shadow(20px 20px 20px seagreen);
 }
+/* Start landing-loader */
+
+/* Start Cursor */
+.cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  border: 1px solid #c6c6c6;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: .1s;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transition: .1s;
+  -moz-transition: .1s;
+  -ms-transition: .1s;
+  -o-transition: .1s;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.cursor2 {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  z-index: 999;
+  background-color: #c6c6c6;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: .15s;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transition: .15s;
+  -moz-transition: .15s;
+  -ms-transition: .15s;
+  -o-transition: .15s;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+/* End Cursor */
 
 /* Keyframe Animation */
 @keyframes slideRight {
