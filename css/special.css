@@ -471,6 +471,7 @@ body {
 .about {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
+  overflow: hidden;
 }
 .about .container {
   display: flex;
