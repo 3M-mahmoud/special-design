@@ -333,13 +333,3 @@ window.addEventListener("load", () => {
     document.body.style.overflow = "auto";
   }, 800)
 });
-
-// cursor
-const cursor = document.querySelector(".cursor");
-const cursor2 = document.querySelector(".cursor2");
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.pageX + "px";
-  cursor.style.top = e.pageY + "px";
-  cursor2.style.left = e.pageX + "px";
-  cursor2.style.top = e.pageY + "px";
-})
